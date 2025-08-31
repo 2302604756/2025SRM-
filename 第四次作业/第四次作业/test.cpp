@@ -24,9 +24,13 @@ int main() {
       
 
     // 3. 如果不是所有人都及格，则使用 Lambda 给低于 60 分的加 5 分
-    if (!allPassed) {
+    if (true) {
         for_each(scores.begin(), scores.end(),
-           [](int score)-> void {if (score<60) score+=5;});
+           [] (int &score)-> void {
+                if (score<60) 
+                    score+=5;
+            
+            });
     }
 
     // 输出排序后的成绩
